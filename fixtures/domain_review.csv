@@ -1,0 +1,6 @@
+name,focus,signal,slack,drag,confidence,score,lane
+baseline,rollout width,40,27,16,55,114,watch
+stress,quota pressure,58,40,28,47,119,watch
+edge,route drift,58,45,8,45,182,ship
+recovery,secret scope,76,30,28,57,155,ship
+stale,rollout width,65,27,26,85,164,ship

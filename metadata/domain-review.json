@@ -1,0 +1,73 @@
+{
+  "repo": "ocamlpolicy",
+  "language": "OCaml",
+  "category": "Platform engineering",
+  "goal": "Evaluate infrastructure policy rules against typed resource fixtures.",
+  "review_model": {
+    "terms": [
+      "rollout width",
+      "quota pressure",
+      "route drift",
+      "secret scope"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "rollout width",
+      "signal": 40,
+      "slack": 27,
+      "drag": 16,
+      "confidence": 55,
+      "score": 114,
+      "lane": "watch"
+    },
+    {
+      "name": "stress",
+      "focus": "quota pressure",
+      "signal": 58,
+      "slack": 40,
+      "drag": 28,
+      "confidence": 47,
+      "score": 119,
+      "lane": "watch"
+    },
+    {
+      "name": "edge",
+      "focus": "route drift",
+      "signal": 58,
+      "slack": 45,
+      "drag": 8,
+      "confidence": 45,
+      "score": 182,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "secret scope",
+      "signal": 76,
+      "slack": 30,
+      "drag": 28,
+      "confidence": 57,
+      "score": 155,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "rollout width",
+      "signal": 65,
+      "slack": 27,
+      "drag": 26,
+      "confidence": 85,
+      "score": 164,
+      "lane": "ship"
+    }
+  ]
+}
